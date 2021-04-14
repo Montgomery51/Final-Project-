@@ -16,6 +16,7 @@
 */
 
 #include <Servo.h> // Servo library 
+#include <EEPROM.h>
 
 Servo Hori;  //Horizontal and Vertical Servos for tracking 
 Servo Verti;
@@ -38,13 +39,15 @@ int LightValue3 = 0;
  int pVerti = 180;
 
 void setup() {
-
+  
+  EEPROM.get(0, pVerti);
+  EEPROM.get(2, pHori);
   Hori.attach(9);
   Hori.write (pHori);
   Verti.attach(10);
   Verti.write(pVerti);
   Serial.begin(9600);
-  
+ 
 
 }
 
@@ -66,17 +69,7 @@ void loop() {
   int BotDiff = (BotR + BotL) - (TopR + TopL);
   int LeftDiff = (TopL + BotL) - (TopR + BotR);
   int RightDiff = (TopR + BotR) - (TopL + BotL);
-
-// TopDiff = abs(TopDiff);
-// BotDiff = abs(BotDiff);
-// LeftDiff = abs(LeftDiff);
-// RightDiff = abs(RightDiff);
-
-//  int TopTwo = ((TopL + TopR) / 2);
-//  int BotTwo = ((BotL + BotL) / 2);
-//  int LeftTwo = ((TopL + BotL) / 2);
-//  int RightTwo = ((TopR + BotR) /2);
-
+  
   if (TopDiff > 3 && pVerti != 0)
   {
     pVerti -= 1;
@@ -101,14 +94,15 @@ void loop() {
     Hori.write(pHori);
   }
 
-
+  EEPROM.put(0, pVerti);
+  EEPROM.put(2, pHori);
   
 
 //Print for light sensor value and sight value 0-50 
   Serial.print("Light sensor top left =");      
-  Serial.println(pVerti);
+  Serial.println(pHori);
   Serial.print("Light sensor Bottom Left =");       
-  Serial.println(BotL);
+  Serial.println(pVerti);
   Serial.print("Light sensor Top Right =");      
   Serial.println(TopR);
   Serial.print("Light sensor Bottom Right =");     

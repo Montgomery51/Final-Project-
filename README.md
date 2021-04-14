@@ -21,9 +21,8 @@ To implement my LCD screen I used code from an open source Arduino page https://
 This page demonstrates how to connect the LCD to the arduino using 6 pins.
 The code for the pinouts and how to wire the LCD were followed and adjust so that the LCD would read out the temerature from the LM36 temperature sensor and the voltage from the solar panels. 
 
-
-
-
+[pic1]: https://github.com/Montgomery51/Final-Project-/blob/main/img/Final%20Build.jpg  "Final Build"
+![alt text][pic1]
 
 
 

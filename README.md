@@ -44,7 +44,10 @@ Links to find this hardware
 -----------------------
 * DeWalt Battery - https://www.amazon.ca/DEWALT-DCB201-Li-Ion-Compact-Battery/dp/B0052MIN3W/ref=sr_1_4?dchild=1&keywords=DeWalt+20v+1.5ah+battery&qid=1618267814&s=hi&sr=1-4  (Not needed to use this same power supply but it is what I had)
 
-* Buck Converter - https://www.amazon.ca/gp/product/B07ZSHT1TZ/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (The LCD display shows voltage in/out and current - Pretty cool)
+* Buck Converter - https://www.amazon.ca/gp/product/B07ZSHT1TZ/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (The LCD display shows voltage in/out and current - Pretty cool) 
+
+<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/DC%20to%20DC%2032V%20to%201.2V-32V%20StepDown%20Voltage%20regulator-%2012A%20160W%20Buck%20Converter%20with%20LCD%20display%20.jpg" width="100" height="100">
+
 
 * Battery Adapter - https://www.amazon.ca/gp/product/B08B1GLBCV/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (awesome adapter for DeWalt batteries)
 

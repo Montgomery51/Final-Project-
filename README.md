@@ -54,7 +54,7 @@ Links to find this hardware
 
 * 3 Pack Uno - https://www.amazon.ca/CANADUINO-ATmega328P-Module-Compatible-Arduino/dp/B07ZQQLDD9/ref=sr_1_7?dchild=1&keywords=Arduino+uno&qid=1618267950&sr=8-7 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/UNO.jpg" width="100" height="100">
 
-* 16 Pin LCD - https://www.amazon.ca/Character-Backlight-Raspberry-Electrical-Internet/dp/B07S7PJYM6/ref=sr_1_15?dchild=1&keywords=16+pin+LCD&qid=1618267979&sr=8-15 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/LCD.png" width="100" height="100">
+* 16 Pin LCD - https://www.amazon.ca/Character-Backlight-Raspberry-Electrical-Internet/dp/B07S7PJYM6/ref=sr_1_15?dchild=1&keywords=16+pin+LCD&qid=1618267979&sr=8-15 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/16%20pin%20LCD.jpg" width="100" height="100">
 
 * TMP 36 Temp Sensor - https://www.digikey.ca/en/products/detail/analog-devices-inc/TMP36GT9Z/820404 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/TMP36.jpg" width="100" height="100">
 

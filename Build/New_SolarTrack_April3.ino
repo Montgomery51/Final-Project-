@@ -6,8 +6,16 @@
  
    Setup:  materials : 4 x 10KΩ resistors 
                        4 x Photo resistors
+                       1 x 16 PIN LCD
+                       1 x 220Ω Resistor 
+                       1 x 10kΩ pot 
+                       2 x Servo motor
                        Jumper wires 
                        Arduino UNO Board 
+                       
+                       External 5V power supply for Servo motors (Needed) 
+                       **Too much current will be drawn from the UNO board so an external power supply is a must**
+                    
 
   
     Name: Nathan Montgomery

@@ -18,6 +18,8 @@ The initial project shows a solar tracker that follows the sun.  Most of my proj
 Basically my solar tracker was attempted to be an improved version of Ingeimaks solar tracker; 
 
 
+[pic1]: https://github.com/Montgomery51/Final-Project-/blob/main/img/DeWalt%2020V%20Battery.jpg "20V DeWalt Battery"
+![alt text][pic1]
 
 
 

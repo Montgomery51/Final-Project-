@@ -8,18 +8,18 @@ By: Nathan Montgomery
 What is a Solar Tracker?
 ========================
 
-  Well to begin a solar tracker is an automated 
+
+  Well to begin a solar tracker is an automated solar panel that will be able to follow the sun along its path during the day.  Automated solar panels could help increase the voltage output of the panels by creating a face on view of the sun during the whole day. So long as you can use energy efficient motors to move the structure it could essentially power itself. 
   
-  
-  Well to begin a solar tracker is an automated solar panel that will be able to follow the sun along its path during the day.  Initially I wanted to create a solar tracker that could follow the sun, read out wind speed, record temperature and relate its position, and charge its own batteries (Basically an autonomous weather station with solar panels). I had a few setbacks this semester with family issues and ordering parts within the timeline but I was able to create a solar tracker that follows a light sources path, records the panel’s position, and read out the value at which the solar panels are producing voltage and the temperature around the unit.  
+  Initially I wanted to create a solar tracker that could follow the sun, read out wind speed, record temperature and relate its position, and charge its own batteries (Basically an autonomous weather station with solar panels). I had a few setbacks this semester with family issues and ordering parts within the timeline but I was able to create a solar tracker that follows a light sources path, records the panel’s position, and read out the value at which the solar panels are producing voltage and the temperature around the unit.  
 
   Starting off I want to give credit to Ingeimaks on Arduino project hub https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 
 The initial project shows a solar tracker that follows the sun.  Most of my project was based off the initial starting code Ingeimaks provided for their project.  Although my code differs greatly from the initial project I followed their code and all credit goes to them for the initial idea.  
 Basically my solar tracker was attempted to be an improved version of Ingeimaks solar tracker; 
 
-
-[pic1]: https://github.com/Montgomery51/Final-Project-/blob/main/img/DeWalt%2020V%20Battery.jpg "20V DeWalt Battery"
-![alt text][pic1]
+To implement my LCD screen I used code from an open source Arduino page https://www.arduino.cc/en/Tutorial/LibraryExamples/HelloWorld 
+This page demonstrates how to connect the LCD to the arduino using 6 pins.
+The code for the pinouts and how to wire the LCD were followed and adjust so that the LCD would read out the temerature from the LM36 temperature sensor and the voltage from the solar panels. 
 
 
 

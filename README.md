@@ -332,6 +332,10 @@ Improvements
 * Add WIFI to stream weather data to the computer or smart phone 
 * creating some sort of water proof case for the electronics would be essential for a stand alone unit 
 
+Progress Pictures 
+=================
+<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Base.jpg" width="200" height="200">
+<img src="" width="200" height="200">
 TEAM
 =====
 Myself - Nathan Montgomery 

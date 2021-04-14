@@ -43,27 +43,28 @@ Hardware
 Links to find this hardware 
 -----------------------
 * DeWalt Battery - https://www.amazon.ca/DEWALT-DCB201-Li-Ion-Compact-Battery/dp/B0052MIN3W/ref=sr_1_4?dchild=1&keywords=DeWalt+20v+1.5ah+battery&qid=1618267814&s=hi&sr=1-4  (Not needed to use this same power supply but it is what I had)
+<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/DeWalt%2020V%20Battery.jpg" width="100" height="100">
 
 * Buck Converter - https://www.amazon.ca/gp/product/B07ZSHT1TZ/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (The LCD display shows voltage in/out and current - Pretty cool) 
 
 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/DC%20to%20DC%2032V%20to%201.2V-32V%20StepDown%20Voltage%20regulator-%2012A%20160W%20Buck%20Converter%20with%20LCD%20display%20.jpg" width="100" height="100">
 
 
-* Battery Adapter - https://www.amazon.ca/gp/product/B08B1GLBCV/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (awesome adapter for DeWalt batteries)
+* Battery Adapter - https://www.amazon.ca/gp/product/B08B1GLBCV/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (awesome adapter for DeWalt batteries) <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/adapter.jpg" width="100" height="100">
 
-* 3 Pack Uno - https://www.amazon.ca/CANADUINO-ATmega328P-Module-Compatible-Arduino/dp/B07ZQQLDD9/ref=sr_1_7?dchild=1&keywords=Arduino+uno&qid=1618267950&sr=8-7
+* 3 Pack Uno - https://www.amazon.ca/CANADUINO-ATmega328P-Module-Compatible-Arduino/dp/B07ZQQLDD9/ref=sr_1_7?dchild=1&keywords=Arduino+uno&qid=1618267950&sr=8-7 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/UNO.jpg" width="100" height="100">
 
-* 16 Pin LCD - https://www.amazon.ca/Character-Backlight-Raspberry-Electrical-Internet/dp/B07S7PJYM6/ref=sr_1_15?dchild=1&keywords=16+pin+LCD&qid=1618267979&sr=8-15
+* 16 Pin LCD - https://www.amazon.ca/Character-Backlight-Raspberry-Electrical-Internet/dp/B07S7PJYM6/ref=sr_1_15?dchild=1&keywords=16+pin+LCD&qid=1618267979&sr=8-15 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/LCD.png" width="100" height="100">
 
-* TMP 36 Temp Sensor - https://www.digikey.ca/en/products/detail/analog-devices-inc/TMP36GT9Z/820404 
+* TMP 36 Temp Sensor - https://www.digikey.ca/en/products/detail/analog-devices-inc/TMP36GT9Z/820404 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/TMP36.jpg" width="100" height="100">
 
-* LongRunner Servo motor - https://www.amazon.ca/gp/product/B01N6C66ZG/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1   
+* LongRunner Servo motor - https://www.amazon.ca/gp/product/B01N6C66ZG/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1 <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/Servo.jpg" width="100" height="100">  
 (These are kinda small for a project like this but it worked)
 
-* PhotoResistor - https://www.adafruit.com/product/161      (I salvaged mine from nightlights I bought from the dollar store but that is an expesive route)
+* PhotoResistor - https://www.adafruit.com/product/161     (I salvaged mine from nightlights I bought from the dollar store but that is an expesive route) <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/PhotoResistor.jpg" width="100" height="100">
 
-*Pan/tilt for small servos - https://www.amazon.ca/gp/product/B07HQB95VY/ref=ox_sc_act_title_2?smid=A2YPMGYKJIIDP8&psc=1 
-
+* Pan/tilt for small servos - https://www.amazon.ca/gp/product/B07HQB95VY/ref=ox_sc_act_title_2?smid=A2YPMGYKJIIDP8&psc=1     
+<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/Pantilt.jpg" width="100" height="100">
 
 Wiring
 =======

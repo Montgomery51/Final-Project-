@@ -1,6 +1,6 @@
-# Final-Project-
-Final Project for CS 207 - Solar Tracker Station
-=============
+# Final Project for CS 207 - Solar Tracker Station
+
+
 By: Nathan Montgomery 
 
 What is a Solar Tracker?

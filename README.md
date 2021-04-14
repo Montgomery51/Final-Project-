@@ -334,38 +334,7 @@ Improvements
 
 Progress Pictures 
 =================
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Base.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20FrontWithoutPanels.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Helping%20Hand%20NightLights.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20LCD%20before%20Solder.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20LCD%20proto.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Messy%20Wiring%20of%20the%20back.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Messy%20WorkStation.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20NightLights.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20NightLights%20Taken%20Apart.jpg" width="200" height="200">
-
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20ProtoBoard1.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Pitch%20and%20Yaw%20component%20.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20ProtoBoard1.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Solar%20Panel%20Salvage.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Soldered%20ProtoBoards.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20SunLight%20Blocker.jpg" width="200" height="200">
-
-<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20WorkStation%20Messy%20.jpg" width="200" height="200">
+<img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Base.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20FrontWithoutPanels.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Helping%20Hand%20NightLights.jpg" width="200" height="200"><img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20LCD%20before%20Solder.jpg" width="200" height="200"><img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20LCD%20proto.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Messy%20Wiring%20of%20the%20back.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Messy%20WorkStation.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20NightLights.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20NightLights%20Taken%20Apart.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20ProtoBoard1.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Pitch%20and%20Yaw%20component%20.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20ProtoBoard1.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Solar%20Panel%20Salvage.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20Soldered%20ProtoBoards.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20SunLight%20Blocker.jpg" width="200" height="200"> <img src="https://github.com/Montgomery51/Final-Project-/blob/main/img/a%20WorkStation%20Messy%20.jpg" width="200" height="200">
 
 TEAM
 =====

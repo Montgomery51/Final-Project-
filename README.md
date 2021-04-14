@@ -89,6 +89,168 @@ My libraries were already isntalled when I got the Arduino IDE but to find these
 
 The code I used initially was provided by Ingeimaks (I highly recommend checking out their page https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 ) they made a beautiful 3D printed base for their tracker. 
 
+My Code For My Solar Tracker Station 
+====================
+```bash
+#include <Servo.h> // Servo library 
+#include <LiquidCrystal.h>
+#include <EEPROM.h>
+
+Servo Hori;  //Horizontal and Vertical Servos for tracking 
+Servo Verti;
+
+const int LightReadOut0= A0;
+const int LightReadOut1= A1;
+const int LightReadOut2= A2;
+const int LightReadOut3= A3;
+
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int VoltReadOut = A4;  // analog pins for analog values 
+const int TempReadOut = A5;
+
+int LightValue0 = 0; //Light variables 
+int LightValue1 = 0;
+int LightValue2 = 0;
+int LightValue3 = 0;
+
+int VoltageValue = 0; // variables 
+int TempValue = 0;
+
+int TopDiff = 0;  //Average checking variables 
+int BotDiff = 0;
+int LeftDiff = 0;
+int RightDiff = 0;
+int pHori = 180;
+int pVerti = 180;
+
+void setup() {
+  
+  EEPROM.get(0, pVerti);  // Position tracking with EEPROM 
+  EEPROM.get(2, pHori);
+  Hori.attach(9);      // Pin 9 to horizontal servo 
+  Hori.write (pHori);  //Takes EEPROM Value and writes it to servo 
+  Verti.attach(10);    // Pin 10 for vertical 
+  Verti.write(pVerti);  //Takes EEPROM Value and writes it to servo
+  lcd.begin(16, 2);    //Starts LCD 
+  delay(500); //Startup Delay so everything warms up!
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  VoltageValue = analogRead(VoltReadOut);
+  TempValue = analogRead(TempReadOut);
+
+  VoltageValue -= 190;    // This value was needed to correct the value of the solar panels on my unit 
+                          // When testing with a digital mutimeter the reading was off by about 1.5 volts 
+                          //After testing mutiple values I found this value of 190 to provide the correct results
+                          
+//  Serial.print("VOLTAGE =");      //Testing for voltage 
+//  Serial.println(VoltageValue);
+//  delay(2000);
+
+  float Voltage = 5.0 * (VoltageValue/1023.0);  //voltage value is analog input 0-1023 so input/1023 == % * 5V  = Voltage
+  float tempC = 5.0 * (TempValue/1023.0);
+  tempC = tempC * 100 - 50;
+
+  Serial.print("VOLTAGE =");      
+  Serial.println(Voltage);
+  // Cursor set for top row and Panel voltage reading 
+  lcd.setCursor(0, 0);
+  lcd.print("SolarPanel ");
+  lcd.print(Voltage);
+  lcd.print("V");
+  // Cursor set for bottom row and temp reading 
+  lcd.setCursor(0, 1);
+  lcd.print("Temp C = ");
+  lcd.print(tempC);
+  lcd.print("C");
+  
+// Setting variable to the value obtained by the analog pin
+  LightValue0 = analogRead(LightReadOut0);          
+  LightValue1 = analogRead(LightReadOut1);         
+  LightValue2 = analogRead(LightReadOut2);          
+  LightValue3 = analogRead(LightReadOut3);   
+         
+//Mapping the photoresistors value for easier math and readout 
+//**Comments below are when looking directly at front of Tracker**
+  int TopL = map(LightValue0, 0, 1023, 0, 50);     //Top Left PhotoSensor 
+  int BotL = map(LightValue1, 0, 1023, 0, 50);    //Bot Left PhotoSensor
+  int TopR = map(LightValue2, 0, 1023, 0, 50);   //Top Right PhotoSensor
+  int BotR = map(LightValue3, 0, 1023, 0, 50);  //Bot Right PhotoSensor
+
+  int TopDiff = (TopR + TopL) - (BotR + BotL);  //Total averages for total top and total bot 
+  int BotDiff = (BotR + BotL) - (TopR + TopL);
+  int LeftDiff = (TopL + BotL) - (TopR + BotR);
+  int RightDiff = (TopR + BotR) - (TopL + BotL);
+  
+  if (TopDiff > 3 && pVerti != 75)  // checks to see if top is bigger than bottom and that its not higher than max hieght 
+  {
+    pVerti -= 1;
+    Verti.write(pVerti); 
+  }
+
+  if (BotDiff > 3 && pVerti != 155)  //Checks for bottom brightness and max depth 
+  {
+    pVerti += 1;
+    Verti.write(pVerti); 
+  }
+
+  if (RightDiff > 3 && pHori != 180) //Checks right side for brightness and to see if its max west 
+  {
+    pHori += 1;
+    Hori.write(pHori);
+  }
+
+   if (LeftDiff > 3 && pHori != 0) //Checks Left side for brightness and to see if its max East 
+  {
+    pHori -= 1;
+    Hori.write(pHori);
+  }
+
+    if (pHori < 15 && Voltage < 0.5)   //Check if nightime and pointing west 
+  {
+    for(int i = 0; i < 180; i++)    // RESET for nightime once power levels drop and the unit is facing west 
+    {                                 // it will reposition to the east (morning)
+      pHori += 1;
+      Hori.write(pHori);
+      delay(50);
+    }
+    EEPROM.put(2, pHori);
+  }
+
+  while (Voltage < 0.5)   //SYstem will shut down if the solar panels are not getting enough juice 
+  {
+    VoltageValue = analogRead(VoltReadOut);  // will check for juice levels 
+    VoltageValue -= 190;
+    Voltage = 5.0 * (VoltageValue/1023.0);
+  }
+
+  EEPROM.put(0, pVerti);   //stores position in the EEPROM  just in case system is reset it wont fly to another position.
+  EEPROM.put(2, pHori);
+
+//  Serial.print("Horizon =");      // printing values of horizon and vertical servo's **For testing max values**
+//  Serial.println(pHori);
+//  Serial.print("Vertical =");      
+//  Serial.println(pVerti);
+//  delay(100);
+
+//Print for light sensor value and sight value 0-50 
+  Serial.print("Light sensor top left =");      
+  Serial.println(TopL);
+  Serial.print("Light sensor Bottom Left =");       
+  Serial.println(BotL);
+  Serial.print("Light sensor Top Right =");      
+  Serial.println(TopR);
+  Serial.print("Light sensor Bottom Right =");     
+  Serial.println(BotR);
+  Serial.println(" ");
+  //delay(2000);
+  
+}
+```
+---------------------------------------------------------------
   The original code from Ingeimaks assigned values to the photoresistors top left top right and bot left and bot right.  I also did this the difference in our code is that they chose to use their complete analog input and then take an average of those values. (this works but the tracker is jumpy and constantly moves wasting power). I took their code as seen below 
 ```bash
  //Ingeimaks
@@ -131,4 +293,53 @@ To check what direction the servo's both vertical and horizontal the following I
     Hori.write(pHori);
   }
 ```
-* You will notice in the statements there are two conditions, well the second condition was made to keep the servo's from over extending the trackers range. I wanted the tracker to be able too look straight up andall the way east to west.  These values would be different if you were to use my code for your servo's. (maybe) 
+* You will notice in the statements there are two conditions, well the second condition was made to keep the servo's from over extending the trackers range. I wanted the tracker to be able too look straight up and all the way east to west.  These values would be different if you were to use my code for your servo's. (maybe) 
+
+Added value to Ingeimaks Solar Tracker 
+====================================
+*The solar tracker will stop all itsa motion if it dtects the panels not producing enough voltage as seen in my code to be (voltage <0.5) The program will sit in a while loop until voltage increases
+*Once night-time occurs the voltage will drop and the system will detect this and the position that it is in (west) and turn itself around to the (east) to prepare for the next days tracking activities 
+*The Tracker is able to detect the voltage the panels create 
+*The tracker now reads the temperature around the unit 
+*The tracker now has an LCD display to relate to the user how efficient their solar panels are 
+
+Improvements 
+=============
+*I would have liked to increase the size of this unit but i did not order the larger servos in time
+*I Would have liekd to add a charging station and more solar panels
+*This system was limited because I only had small servos so i had to shrink the unit down 
+*So, for further improvements I would say increase servo size 
+*Use a "reliable" 3D printer to build a better custom base 
+*More Solar panels 
+*Wire loom and or conduit wopuld have made the project look more pleasant
+*Addidng an anemometer 
+*IF anemometer was added a DMT11 moisture sensor could be added as well to create a fully functional weather station 
+*Add WIFI to stream weather data to the computer or smart phone 
+*creating some sort of water proof case for the electronics would be essential for a stand alone unit 
+
+TEAM
+=====
+Myself - Nathan Montgomery 
+
+Credits
+=======
+*Ingeimaks - https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 - Original design Idea 
+
+*LCD SCREEN Library originally added 18 Apr 2008
+ by David A. Mellis
+ library modified 5 Jul 2009
+ by Limor Fried (http://www.ladyada.net)
+ example added 9 Jul 2009
+ by Tom Igoe
+ modified 22 Nov 2010
+ by Tom Igoe
+ modified 7 Nov 2016
+ by Arturo Guadalupi
+
+ This example code is in the public domain.
+
+ http://www.arduino.cc/en/Tutorial/LiquidCrystalHelloWorld
+ 
+ *Fritzing was used for drawing electrical diagrams - https://fritzing.org/
+ 
+ *Dr. Trevor M. Tomesh - For being a great leader into the world of electronics 

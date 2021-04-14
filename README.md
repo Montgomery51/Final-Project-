@@ -14,7 +14,7 @@ What is a Solar Tracker?
   Well to begin a solar tracker is an automated solar panel that will be able to follow the sun along its path during the day.  Initially I wanted to create a solar tracker that could follow the sun, read out wind speed, record temperature and relate its position, and charge its own batteries (Basically an autonomous weather station with solar panels). I had a few setbacks this semester with family issues and ordering parts within the timeline but I was able to create a solar tracker that follows a light sources path, records the panel’s position, and read out the value at which the solar panels are producing voltage and the temperature around the unit.  
 
   Starting off I want to give credit to Ingeimaks on Arduino project hub https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 
-The initial project shows a solar tracker that follows the sun.  Most of my project was based off the initial starting code Ingeimaks provided for their project.  Although my code differs greatly from the initial project I followed their code and all credit goes to them for my ideas following.  
+The initial project shows a solar tracker that follows the sun.  Most of my project was based off the initial starting code Ingeimaks provided for their project.  Although my code differs greatly from the initial project I followed their code and all credit goes to them for the initial idea.  
 Basically my solar tracker was attempted to be an improved version of Ingeimaks solar tracker; 
 
 

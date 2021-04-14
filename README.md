@@ -21,12 +21,49 @@ To implement my LCD screen I used code from an open source Arduino page https://
 This page demonstrates how to connect the LCD to the arduino using 6 pins.
 The code for the pinouts and how to wire the LCD were followed and adjust so that the LCD would read out the temerature from the LM36 temperature sensor and the voltage from the solar panels. 
 
-[pic1]: https://github.com/Montgomery51/Final-Project-/blob/main/img/Final%20Build.jpg  "Final Build"
-![alt text][pic1]
+![alt text](https://github.com/Montgomery51/Final-Project-/blob/main/img/Final%20Build.jpg  "Final Build")
 
 
+Hardware 
+========
+* 1 x Arduino UNO
+* 1 x Breadboard (or prototype boards and solder - Used in this project)
+* 4 x PhotoResistors 
+* 4 x 10k ohm Resistors 
+* 1 x 220 ohm Resistor
+* 1 x TMP36 Temperature Sensor 
+* 2 x Servo motor (Bigger is Better! But not needed)
+* 1 x 16 PIN LCD Screen 
+* 1 x 10k ohm Potentiometer 
+* Solar Panel (Salvaged or new)
+* Wire for connections 
+* External power supply ... I used a 20v Dewalt battery with an adapter connected to a buck converter (Worked Awesomely good) 
+-----------------------
+* For The base.... I created my base with a piece of wood, two scrap hinges for a shelf, and I found an old pan / tilt servo bracket with pieces missing....But i made it work 
+* The base was supposed to be 3D printed but the 3D printer I had access to decided to melt everything and try to light on fire instead of building my base.... So the base you see in the above picture is what was built. 
+-----------------------
+Links to find this hardware 
+-----------------------
+* DeWalt Battery - https://www.amazon.ca/DEWALT-DCB201-Li-Ion-Compact-Battery/dp/B0052MIN3W/ref=sr_1_4?dchild=1&keywords=DeWalt+20v+1.5ah+battery&qid=1618267814&s=hi&sr=1-4  (Not needed to use this same power supply but it is what I had)
 
+* Buck Converter - https://www.amazon.ca/gp/product/B07ZSHT1TZ/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (The LCD display shows voltage in/out and current - Pretty cool)
 
+* Battery Adapter - https://www.amazon.ca/gp/product/B08B1GLBCV/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1 (awesome adapter for DeWalt batteries)
+
+* 3 Pack Uno - https://www.amazon.ca/CANADUINO-ATmega328P-Module-Compatible-Arduino/dp/B07ZQQLDD9/ref=sr_1_7?dchild=1&keywords=Arduino+uno&qid=1618267950&sr=8-7
+
+* 16 Pin LCD - https://www.amazon.ca/Character-Backlight-Raspberry-Electrical-Internet/dp/B07S7PJYM6/ref=sr_1_15?dchild=1&keywords=16+pin+LCD&qid=1618267979&sr=8-15
+
+* TMP 36 Temp Sensor - https://www.digikey.ca/en/products/detail/analog-devices-inc/TMP36GT9Z/820404 
+
+* LongRunner Servo motor - https://www.amazon.ca/gp/product/B01N6C66ZG/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1   
+(These are kinda small for a project like this but it worked)
+
+* PhotoResistor - https://www.adafruit.com/product/161      (I salvaged mine from nightlights I bought from the dollar store)
+
+Wiring
+=======
+![alt text](https://github.com/Montgomery51/Final-Project-/blob/main/img/Final_SolarTrack_Schematic_V2.jpg "Wiring Diagram")
 
 
 

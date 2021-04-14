@@ -59,7 +59,10 @@ Links to find this hardware
 * LongRunner Servo motor - https://www.amazon.ca/gp/product/B01N6C66ZG/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1   
 (These are kinda small for a project like this but it worked)
 
-* PhotoResistor - https://www.adafruit.com/product/161      (I salvaged mine from nightlights I bought from the dollar store)
+* PhotoResistor - https://www.adafruit.com/product/161      (I salvaged mine from nightlights I bought from the dollar store but that is an expesive route)
+
+*Pan/tilt for small servos - https://www.amazon.ca/gp/product/B07HQB95VY/ref=ox_sc_act_title_2?smid=A2YPMGYKJIIDP8&psc=1 
+
 
 Wiring
 =======
@@ -72,108 +75,60 @@ I always find these pictures to be really nice to read when trying out a new pro
 ----------------------------
 Software
 ========
+If you are going to put this onto an Arduino device I would recommend downloading the Arduino IDE here - https://www.arduino.cc/en/software 
 
-The code I used initially was provided by Ingeimaks (I highly recommend 
+Libraries
+---------
+My libraries were already isntalled when I got the Arduino IDE but to find these libraries (if you dont have them) you click the tools option on the top toolbar and then manage libraries... Once it pops up you can search LCD for the liquid crystal library and install it and also search for "Servo" and you will be able to download that library.  
 
+```bash
+#include <Servo.h>
+#include <LiquidCrystal.h>
+#include <EEPROM.h>
+```
 
+The code I used initially was provided by Ingeimaks (I highly recommend checking out their page https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 ) they made a beautiful 3D printed base for their tracker. 
 
-
-
-
-Starting off I smoothed out the code by mapping the values from 0-50 and error checking the photo resistors-
-
--Original Ingeimaks Code for checking Lights Position-
+  The original code from Ingeimaks assigned values to the photoresistors top left top right and bot left and bot right.  I also did this the difference in our code is that they chose to use their complete analog input and then take an average of those values. (this works but the tracker is jumpy and constantly moves wasting power). I took their code as seen below 
 ```bash
  //Ingeimaks
-#include <Servo.h>
-//definiamo i servomotori orizzontale e verticale
-Servo servohori;
-int servoh = 0;
-int servohLimitHigh = 160;
-int servohLimitLow = 60;
-
-Servo servoverti; 
-int servov = 0; 
-int servovLimitHigh = 160;
-int servovLimitLow = 60;
-//Pin fotoresistenze
-int ldrtopl = 2; //top left 
-int ldrtopr = 1; //top right 
-int ldrbotl = 3; // bottom left 
-int ldrbotr = 0; // bottom right 
-
- void setup () 
- {
-  servohori.attach(10);
-  servohori.write(60);
-  servoverti.attach(9);
-  servoverti.write(60);
-  Serial.begin(9600);
-  delay(500);
-  
- }
-
-void loop()
-{
-  servoh = servohori.read();
-  servov = servoverti.read();
-  //Valore Analogico delle fotoresistenza
-  int topl = analogRead(ldrtopl);
-  int topr = analogRead(ldrtopr);
-  int botl = analogRead(ldrbotl);
-  int botr = analogRead(ldrbotr);
-  // Calcoliamo una Media
   int avgtop = (topl + topr) ; //average of top 
   int avgbot = (botl + botr) ; //average of bottom 
   int avgleft = (topl + botl) ; //average of left 
   int avgright = (topr + botr) ; //average of right 
-
-  if (avgtop < avgbot)
-  {
-    servoverti.write(servov +1);
-    if (servov > servovLimitHigh) 
-     { 
-      servov = servovLimitHigh;
-     }
-    delay(10);
-  }
-  else if (avgbot < avgtop)
-  {
-    servoverti.write(servov -1);
-    if (servov < servovLimitLow)
-  {
-    servov = servovLimitLow;
-  }
-    delay(10);
-  }
-  else 
-  {
-    servoverti.write(servov);
-  }
-  
-  if (avgleft > avgright)
-  {
-    servohori.write(servoh +1);
-    if (servoh > servohLimitHigh)
-    {
-    servoh = servohLimitHigh;
-    }
-    delay(10);
-  }
-  else if (avgright > avgleft)
-  {
-    servohori.write(servoh -1);
-    if (servoh < servohLimitLow)
-     {
-     servoh = servohLimitLow;
-     }
-    delay(10);
-  }
-  else 
-  {
-    servohori.write(servoh);
-  }
-  delay(50);
-}
 ```
+The photo resistors values were mapped from 0 to 50 and then checked for differences in their values in if statements with an error of 3. I found 3 was a very stable amount for error checking after being mapped 0-50 to keep the tracker from jumping back and forth.  (The error in the difference in photo resistor values)   
+```bash
+  int TopL = map(LightValue0, 0, 1023, 0, 50);     //Top Left PhotoSensor 
+  int BotL = map(LightValue1, 0, 1023, 0, 50);    //Bot Left PhotoSensor
+  int TopR = map(LightValue2, 0, 1023, 0, 50);   //Top Right PhotoSensor
+  int BotR = map(LightValue3, 0, 1023, 0, 50);  //Bot Right PhotoSensor
 
+  int TopDiff = (TopR + TopL) - (BotR + BotL);
+  int BotDiff = (BotR + BotL) - (TopR + TopL);
+  int LeftDiff = (TopL + BotL) - (TopR + BotR);
+  int RightDiff = (TopR + BotR) - (TopL + BotL);
+```
+To check what direction the servo's both vertical and horizontal the following If statements were made 
+```bash
+ if (TopDiff > 3 && pVerti != 75){
+    pVerti -= 1;
+    Verti.write(pVerti); 
+  }
+
+  if (BotDiff > 3 && pVerti != 155){
+    pVerti += 1;
+    Verti.write(pVerti); 
+  }
+
+  if (RightDiff > 3 && pHori != 180){
+    pHori += 1;
+    Hori.write(pHori);
+  }
+
+   if (LeftDiff > 3 && pHori != 0){
+    pHori -= 1;
+    Hori.write(pHori);
+  }
+```
+* You will notice in the statements there are two conditions, well the second condition was made to keep the servo's from over extending the trackers range. I wanted the tracker to be able too look straight up andall the way east to west.  These values would be different if you were to use my code for your servo's. (maybe) 

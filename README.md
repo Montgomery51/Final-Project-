@@ -63,10 +63,17 @@ Links to find this hardware
 
 Wiring
 =======
-![alt text](https://github.com/Montgomery51/Final-Project-/blob/main/img/Final_SolarTrack_Schematic_V2.jpg "Wiring Diagram")
+----------------------------
+![alt text](https://github.com/Montgomery51/Final-Project-/blob/main/img/Final_SolarTrack_Schematic_V2.jpg "Wiring Diagram Picture")
+Wiring diagram picture 
+----------------------------
+I always find these pictures to be really nice to read when trying out a new project, but also i have created a wiring diagram as well as seen below.
+![alt text](https://github.com/Montgomery51/Final-Project-/blob/main/img/Final_SolarTrack_Schematic_schem.jpg "Wiring Diagram")
+----------------------------
+Software
+========
 
-
-
+The code I used initially was provided by Ingeimaks (I highly recommend 
 
 
 

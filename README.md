@@ -1,7 +1,5 @@
 # Final-Project-
-Final Project for CS 207
-
-Solar Tracker 
+Final Project for CS 207 - Solar Tracker Station
 =============
 By: Nathan Montgomery 
 

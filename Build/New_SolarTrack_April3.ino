@@ -70,13 +70,13 @@ void loop() {
   int LeftDiff = (TopL + BotL) - (TopR + BotR);
   int RightDiff = (TopR + BotR) - (TopL + BotL);
   
-  if (TopDiff > 3 && pVerti != 0)
+  if (TopDiff > 3 && pVerti != 75)
   {
     pVerti -= 1;
     Verti.write(pVerti); 
   }
 
-  if (BotDiff > 3 && pVerti != 180)
+  if (BotDiff > 3 && pVerti != 155)
   {
     pVerti += 1;
     Verti.write(pVerti); 
@@ -100,9 +100,9 @@ void loop() {
 
 //Print for light sensor value and sight value 0-50 
   Serial.print("Light sensor top left =");      
-  Serial.println(pHori);
+  Serial.println(TopL);
   Serial.print("Light sensor Bottom Left =");       
-  Serial.println(pVerti);
+  Serial.println(BotL);
   Serial.print("Light sensor Top Right =");      
   Serial.println(TopR);
   Serial.print("Light sensor Bottom Right =");     

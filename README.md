@@ -251,6 +251,19 @@ void loop() {
 }
 ```
 ---------------------------------------------------------------
+How To
+======
+* IF you followed the wiring diagram correctly and built the unit with the servo's wired in the proper orientation! (if not just switch their dtaa wires) 
+* IF everything is grounded 
+* IF everything is properly secured down 
+* IF the world has not yet ended 
+* You may now hook up the Arduino and upload the code!
+
+* Once the code is loaded....sit back and enjoy all the solar tracking goodness! 
+* Seriously it should totally work now.... 
+* If not I suggest checking all the connections and greound wires 
+* Also if using those fun little jumper wires i suggest checking ---each and every--- connection 
+
   The original code from Ingeimaks assigned values to the photoresistors top left top right and bot left and bot right.  I also did this the difference in our code is that they chose to use their complete analog input and then take an average of those values. (this works but the tracker is jumpy and constantly moves wasting power). I took their code as seen below 
 ```bash
  //Ingeimaks
@@ -297,25 +310,25 @@ To check what direction the servo's both vertical and horizontal the following I
 
 Added value to Ingeimaks Solar Tracker 
 ====================================
-*The solar tracker will stop all itsa motion if it dtects the panels not producing enough voltage as seen in my code to be (voltage <0.5) The program will sit in a while loop until voltage increases
-*Once night-time occurs the voltage will drop and the system will detect this and the position that it is in (west) and turn itself around to the (east) to prepare for the next days tracking activities 
-*The Tracker is able to detect the voltage the panels create 
-*The tracker now reads the temperature around the unit 
-*The tracker now has an LCD display to relate to the user how efficient their solar panels are 
+* The solar tracker will stop all its motion if it dtects the panels not producing enough voltage as seen in my code to be (voltage <0.5) The program will sit in a while loop until voltage increases
+* Once night-time occurs the voltage will drop and the system will detect this and the position that it is in (west) and turn itself around to the (east) to prepare for the next days tracking activities 
+* The Tracker is able to detect the voltage the panels create 
+* The tracker now reads the temperature around the unit 
+* The tracker now has an LCD display to relate to the user how efficient their solar panels are 
 
 Improvements 
 =============
-*I would have liked to increase the size of this unit but i did not order the larger servos in time
-*I Would have liekd to add a charging station and more solar panels
-*This system was limited because I only had small servos so i had to shrink the unit down 
-*So, for further improvements I would say increase servo size 
-*Use a "reliable" 3D printer to build a better custom base 
-*More Solar panels 
-*Wire loom and or conduit wopuld have made the project look more pleasant
-*Addidng an anemometer 
-*IF anemometer was added a DMT11 moisture sensor could be added as well to create a fully functional weather station 
-*Add WIFI to stream weather data to the computer or smart phone 
-*creating some sort of water proof case for the electronics would be essential for a stand alone unit 
+* I would have liked to increase the size of this unit but i did not order the larger servos in time
+* I Would have liekd to add a charging station and more solar panels
+* This system was limited because I only had small servos so i had to shrink the unit down 
+* So, for further improvements I would say increase servo size 
+* Use a "reliable" 3D printer to build a better custom base 
+* More Solar panels 
+* Wire loom and or conduit wopuld have made the project look more pleasant
+* Addidng an anemometer 
+* IF anemometer was added a DMT11 moisture sensor could be added as well to create a fully functional weather station 
+* Add WIFI to stream weather data to the computer or smart phone 
+* creating some sort of water proof case for the electronics would be essential for a stand alone unit 
 
 TEAM
 =====
@@ -323,9 +336,9 @@ Myself - Nathan Montgomery
 
 Credits
 =======
-*Ingeimaks - https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 - Original design Idea 
+* Ingeimaks - https://create.arduino.cc/projecthub/Ingeimaks/diy-solar-tracker-arduino-project-ita-78ad78 - Original design Idea 
 
-*LCD SCREEN Library originally added 18 Apr 2008
+* LCD SCREEN Library originally added 18 Apr 2008
  by David A. Mellis
  library modified 5 Jul 2009
  by Limor Fried (http://www.ladyada.net)
@@ -340,6 +353,6 @@ Credits
 
  http://www.arduino.cc/en/Tutorial/LiquidCrystalHelloWorld
  
- *Fritzing was used for drawing electrical diagrams - https://fritzing.org/
+ * Fritzing was used for drawing electrical diagrams - https://fritzing.org/
  
- *Dr. Trevor M. Tomesh - For being a great leader into the world of electronics 
+ * Dr. Trevor M. Tomesh - For being a great leader into the world of electronics 
